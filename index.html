@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="cyber" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Tu Nombre Completo] | Desarrollador Full Stack & Backend</title>
+  <meta name="description" content="Portafolio profesional de desarrollo Backend y Full Stack. Especialista en FastAPI, ASP.NET, SQL Server, PostgreSQL, Docker y Azure.">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-obsidian text-slate">
+
+  <!-- Atmospheric Noise Overlay (SKILL.md 4: Opacity 0.035) -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       NAVIGATION HEADER (Contextual, Fast & Fluid)
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
+        <span class="brand-symbol">⚡</span>
+        <span class="brand-text">[Tu Nombre]</span>
+        <span class="badge-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Disponible</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#tecnologias" class="nav-link">Tecnologías</a></li>
+          <li><a href="#experiencia" class="nav-link">Trayectoria</a></li>
+          <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions: Theme Switcher + CTA Button -->
+      <div class="header-actions">
+        <!-- Palette Switcher Pill -->
+        <div class="theme-dropdown-wrap">
+          <button class="theme-picker-btn" id="themePickerBtn" aria-label="Cambiar paleta de colores" title="Cambiar tema de color">
+            <i data-lucide="palette" class="icon-sm"></i>
+            <span class="current-theme-label" id="currentThemeLabel">Cian Cyber</span>
+            <i data-lucide="chevron-down" class="icon-xs"></i>
+          </button>
+          <div class="theme-menu" id="themeMenu" hidden>
+            <button class="theme-opt active" onclick="setTheme('cyber')">
+              <span class="color-dot dot-cyber"></span>
+              <span>Cian Cyber (Default)</span>
+            </button>
+            <button class="theme-opt" onclick="setTheme('emerald')">
+              <span class="color-dot dot-emerald"></span>
+              <span>Verde Terminal (Matrix)</span>
+            </button>
+            <button class="theme-opt" onclick="setTheme('indigo')">
+              <span class="color-dot dot-indigo"></span>
+              <span>Índigo Cloud (Enterprise)</span>
+            </button>
+            <button class="theme-opt" onclick="setTheme('monochrome')">
+              <span class="color-dot dot-monochrome"></span>
+              <span>Monocromo Puro (Minimal)</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="#contacto" class="btn btn-secondary-sm">
+          <i data-lucide="send" class="icon-sm"></i>
+          <span>Hablemos</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Alternar navegación" aria-expanded="false">
+          <i data-lucide="menu" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. ENCABEZADO (HERO SECTION)
+         ====================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Terminal Status Pill -->
+          <div class="terminal-pill">
+            <span class="pill-dot"></span>
+            <span class="mono-code">STATUS: OPEN FOR HIRE // BACKEND & FULL STACK</span>
+          </div>
+
+          <!-- Name & Specialty -->
+          <div class="hero-headings">
+            <h1 class="hero-name">
+              <span>[Tu</span>
+              <span>Nombre</span>
+              <span class="text-gradient">Completo]</span>
+            </h1>
+            <h2 class="hero-role">
+              <span class="code-bracket">[</span>
+              Desarrollador Full Stack / Backend
+              <span class="code-bracket">]</span>
+            </h2>
+          </div>
+
+          <!-- Impact Quote -->
+          <p class="hero-impact">
+            “Construyo arquitecturas backend de alta concurrencia, APIs ultrarrápidas y soluciones web resilientes que transforman necesidades complejas en software confiable y escalable.”
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#proyectos" class="btn btn-primary">
+              <span>Ver Proyectos</span>
+              <i data-lucide="arrow-down-right" class="icon-md"></i>
+            </a>
+
+            <button class="btn btn-glass" id="btnDownloadCV" onclick="openCvModal()">
+              <i data-lucide="file-down" class="icon-md text-accent"></i>
+              <span>Descargar CV (PDF)</span>
+            </button>
+          </div>
+
+          <!-- Social Icons Bar -->
+          <div class="hero-social-row">
+            <span class="social-label mono-code">CONECTAR:</span>
+            <div class="social-icons">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Perfil de GitHub" aria-label="GitHub">
+                <i data-lucide="github"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Perfil de LinkedIn" aria-label="LinkedIn">
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a href="mailto:tu.correo@ejemplo.com" class="social-link" title="Enviar Correo Electrónico" aria-label="Correo">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Architecture Code Showcase -->
+        <div class="hero-showcase">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title mono-code">backend-architecture.py</div>
+              <div class="window-badge mono-code">FASTAPI // ASYNC</div>
+            </div>
+            <pre class="window-body"><code><span class="c-keyword">from</span> fastapi <span class="c-keyword">import</span> FastAPI, Depends, status
+<span class="c-keyword">from</span> app.core.database <span class="c-keyword">import</span> get_db_pool
+<span class="c-keyword">from</span> app.services.engine <span class="c-keyword">import</span> TransactionOrchestrator
+
+app = FastAPI(title=<span class="c-str">"Core_API_v1"</span>, docs_url=<span class="c-str">"/docs"</span>)
+
+<span class="c-decorator">@app.post</span>(<span class="c-str">"/api/v1/dispatch"</span>, status_code=status.HTTP_200_OK)
+<span class="c-keyword">async def</span> <span class="c-func">process_event</span>(payload: EventPayload, db=Depends(get_db_pool)):
+    <span class="c-comment"># Idempotent high-throughput queue dispatch</span>
+    orchestrator = TransactionOrchestrator(db)
+    result = <span class="c-keyword">await</span> orchestrator.execute_safe_pipeline(payload)
+    <span class="c-keyword">return</span> {<span class="c-str">"status"</span>: <span class="c-str">"COMPLETED"</span>, <span class="c-str">"latency_ms"</span>: 8.4}</code></pre>
+            <div class="window-footer">
+              <div class="metric-item">
+                <span class="metric-label">UPTIME</span>
+                <span class="metric-value text-emerald">99.99%</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">LATENCIA P99</span>
+                <span class="metric-value text-accent">&lt; 15ms</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CONTAINERS</span>
+                <span class="metric-value text-secondary">DOCKER OK</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. PROYECTOS DESTACADOS (Mejorado, Robusto, Sin Bugs)
+         ====================================================================== -->
+    <section class="section-padding projects-section" id="proyectos">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-head">
+          <div class="section-tag mono-code">
+            <span class="tag-hash">//</span> CASOS DE ESTUDIO
+          </div>
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-description">
+            Soluciones reales diseñadas con enfoque en rendimiento, arquitectura limpia y valor directo al usuario y negocio.
+          </p>
+        </div>
+
+        <div class="projects-stack">
+          <!-- ---------------------------------------------------------------
+               PROYECTO 1 (Ejemplo con código privado / cliente)
+               --------------------------------------------------------------- -->
+          <article class="project-card card-private" id="cardProject1">
+            <div class="project-grid">
+              
+              <!-- Showcase Interactivo con Vistas / Pestañas y Carrusel Robusto -->
+              <div class="project-media-col">
+                <div class="media-showcase-box">
+                  
+                  <!-- Tabs de Vistas del Proyecto -->
+                  <div class="showcase-tabs-bar">
+                    <button class="showcase-tab active" onclick="switchProject1View(0)" id="p1Tab0">
+                      <i data-lucide="bar-chart-3" class="icon-xs"></i>
+                      <span>Dashboard</span>
+                    </button>
+                    <button class="showcase-tab" onclick="switchProject1View(1)" id="p1Tab1">
+                      <i data-lucide="git-merge" class="icon-xs"></i>
+                      <span>Arquitectura</span>
+                    </button>
+                    <button class="showcase-tab" onclick="switchProject1View(2)" id="p1Tab2">
+                      <i data-lucide="terminal-square" class="icon-xs"></i>
+                      <span>Auditoría</span>
+                    </button>
+                  </div>
+
+                  <!-- Carrusel Contenedor (Sin flex bugs, 100% estable) -->
+                  <div class="carousel-viewport" id="carouselViewport1">
+                    <div class="carousel-track-wrapper" id="carouselTrack1">
+                      
+                      <!-- Slide 0: Dashboard Transaccional en Tiempo Real -->
+                      <div class="slide-pane active" id="p1Slide0">
+                        <div class="mockup-screen">
+                          <div class="mockup-bar">
+                            <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
+                            <span class="mock-url mono-code">https://finpulse-core.internal/transactions/realtime</span>
+                          </div>
+                          <div class="mockup-content mockup-visual-1">
+                            <div class="mock-header-row">
+                              <span class="mock-title">Monitor Transaccional en Tiempo Real</span>
+                              <span class="mock-badge live">● EN VIVO</span>
+                            </div>
+                            <div class="mock-stats-grid">
+                              <div class="mock-stat-box">
+                                <span class="lbl">Transacciones / seg</span>
+                                <span class="num text-accent">4,280 TPS</span>
+                              </div>
+                              <div class="mock-stat-box">
+                                <span class="lbl">Tasa de Éxito</span>
+                                <span class="num text-emerald">99.98%</span>
+                              </div>
+                              <div class="mock-stat-box">
+                                <span class="lbl">Conciliación</span>
+                                <span class="num text-secondary">&lt; 30s</span>
+                              </div>
+                            </div>
+                            <div class="mock-chart-placeholder">
+                              <div class="chart-bar" style="height: 40%;"></div>
+                              <div class="chart-bar" style="height: 65%;"></div>
+                              <div class="chart-bar" style="height: 85%;"></div>
+                              <div class="chart-bar" style="height: 70%;"></div>
+                              <div class="chart-bar" style="height: 95%;"></div>
+                              <div class="chart-bar" style="height: 80%;"></div>
+                              <div class="chart-bar active" style="height: 100%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 1: Diagrama de Arquitectura Backend -->
+                      <div class="slide-pane" id="p1Slide1">
+                        <div class="mockup-screen">
+                          <div class="mockup-bar">
+                            <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
+                            <span class="mock-url mono-code">finpulse://architecture-v2.spec</span>
+                          </div>
+                          <div class="mockup-content mockup-visual-2">
+                            <div class="arch-flow">
+                              <div class="arch-box">
+                                <i data-lucide="smartphone" class="icon-sm text-accent"></i>
+                                <span>Clientes HTTP</span>
+                              </div>
+                              <div class="arch-sep">➔</div>
+                              <div class="arch-box active-box">
+                                <i data-lucide="zap" class="icon-sm text-accent"></i>
+                                <span>FastAPI Core</span>
+                              </div>
+                              <div class="arch-sep">➔</div>
+                              <div class="arch-box">
+                                <i data-lucide="layers" class="icon-sm text-secondary"></i>
+                                <span>Redis Queue</span>
+                              </div>
+                              <div class="arch-sep">➔</div>
+                              <div class="arch-box active-box">
+                                <i data-lucide="database" class="icon-sm text-emerald"></i>
+                                <span>SQL Server Clustered</span>
+                              </div>
+                            </div>
+                            <div class="arch-spec-footer mono-code">
+                              <span>DESPLIEGUE: Azure App Services + Docker Compose</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 2: Log de Conciliación & Auditoría -->
+                      <div class="slide-pane" id="p1Slide2">
+                        <div class="mockup-screen">
+                          <div class="mockup-bar">
+                            <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
+                            <span class="mock-url mono-code">finpulse://audit/reconciliation.log</span>
+                          </div>
+                          <div class="mockup-content mockup-visual-3 mono-code">
+                            <div class="log-line"><span class="log-ts">[10:14:02.112]</span> <span class="log-ok">INFO</span> Batch #9021 reconciliado con éxito.</div>
+                            <div class="log-line"><span class="log-ts">[10:14:02.348]</span> <span class="log-ok">INFO</span> 12,450 registros verificados contra Core Bancario.</div>
+                            <div class="log-line"><span class="log-ts">[10:14:02.490]</span> <span class="log-ok">SUCCESS</span> Cero discrepancias financieras detectadas.</div>
+                            <div class="log-line"><span class="log-ts">[10:14:02.801]</span> <span class="log-tag">AUDIT_LOCK</span> Reporte criptográfico firmado en Azure Key Vault.</div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Controles Inferiores del Carrusel: Prev / Dots / Next -->
+                  <div class="carousel-bottom-bar">
+                    <button class="nav-arrow-btn" onclick="stepProject1Carousel(-1)" aria-label="Vista anterior">
+                      <i data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="dots-indicator">
+                      <span class="dot-item active" onclick="switchProject1View(0)" id="p1Dot0"></span>
+                      <span class="dot-item" onclick="switchProject1View(1)" id="p1Dot1"></span>
+                      <span class="dot-item" onclick="switchProject1View(2)" id="p1Dot2"></span>
+                    </div>
+                    <span class="slide-counter-badge mono-code" id="p1SlideCounter">Vista 1 de 3</span>
+                    <button class="nav-arrow-btn" onclick="stepProject1Carousel(1)" aria-label="Vista siguiente">
+                      <i data-lucide="chevron-right"></i>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="project-info-col">
+                <div class="project-meta-badges">
+                  <span class="badge badge-private">
+                    <i data-lucide="lock" class="icon-xs"></i>
+                    <span>🔒 Código Privado</span>
+                  </span>
+                  <span class="badge badge-highlight">Fintech Enterprise</span>
+                </div>
+
+                <h3 class="project-title">FinPulse Core - Motor Transaccional & Conciliación Bancaria</h3>
+
+                <ul class="project-details-list">
+                  <li>
+                    <strong class="detail-label"><i data-lucide="alert-circle" class="icon-xs text-amber"></i> Problema:</strong>
+                    <span class="detail-text">Fallo crítico por cuellos de botella de concurrencia y retrasos de hasta 4 horas en la conciliación de más de 60,000 transacciones bancarias diarias entre diferentes pasarelas.</span>
+                  </li>
+                  <li>
+                    <strong class="detail-label"><i data-lucide="check-circle-2" class="icon-xs text-emerald"></i> Solución:</strong>
+                    <span class="detail-text">Diseñé un motor backend con FastAPI desacoplado mediante colas de alta concurrencia e inserciones idempotentes por lotes, reduciendo el proceso a solo 30 segundos con 99.99% de exactitud y logs auditables.</span>
+                  </li>
+                  <li>
+                    <strong class="detail-label"><i data-lucide="user-check" class="icon-xs text-accent"></i> Mi Rol:</strong>
+                    <span class="detail-text">Arquitectura backend completa, diseño de procedimientos almacenados optimizados en SQL Server, índices clusterizados y contenedorización de servicios con Docker en Microsoft Azure.</span>
+                  </li>
+                </ul>
+
+                <div class="tech-tags">
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">SQL Server</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Microsoft Azure</span>
+                  <span class="tech-tag">Redis</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary-outline" onclick="openVideoDemoModal('FinPulse Core')">
+                    <i data-lucide="play-circle" class="icon-md"></i>
+                    <span>Ver Demo en Video</span>
+                  </button>
+                  <span class="private-note mono-code">
+                    <i data-lucide="shield-check" class="icon-xs"></i> Repositorio bajo acuerdo de confidencialidad (NDA)
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ---------------------------------------------------------------
+               PROYECTO 2 (Ejemplo público / Open Source)
+               --------------------------------------------------------------- -->
+          <article class="project-card card-public" id="cardProject2">
+            <div class="project-grid">
+
+              <!-- Visual / Mockup Interactivo del Proyecto 2 -->
+              <div class="project-media-col">
+                <div class="media-showcase-box">
+                  
+                  <div class="showcase-tabs-bar">
+                    <button class="showcase-tab active" onclick="switchProject2View(0)" id="p2Tab0">
+                      <i data-lucide="activity" class="icon-xs"></i>
+                      <span>Métricas en Vivo</span>
+                    </button>
+                    <button class="showcase-tab" onclick="switchProject2View(1)" id="p2Tab1">
+                      <i data-lucide="code-2" class="icon-xs"></i>
+                      <span>Controlador ASP.NET</span>
+                    </button>
+                  </div>
+
+                  <div class="carousel-viewport">
+                    <!-- Vista 0: Telemetría en Vivo -->
+                    <div class="slide-pane active" id="p2Slide0">
+                      <div class="mockup-screen">
+                        <div class="mockup-bar">
+                          <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
+                          <span class="mock-url mono-code">https://github.com/tu-usuario/devmetrics-cloud</span>
+                        </div>
+                        <div class="mockup-content public-preview-inner">
+                          <div class="terminal-banner">
+                            <span class="term-prompt mono-code">$ devmetrics-agent --status</span>
+                            <span class="term-badge mono-code text-emerald">RUNNING [PID 4109]</span>
+                          </div>
+
+                          <div class="telemetry-grid">
+                            <div class="telemetry-card">
+                              <div class="card-icon"><i data-lucide="cpu" class="text-accent"></i></div>
+                              <div class="card-data">
+                                <span class="val">14.2%</span>
+                                <span class="lbl mono-code">CPU Cores</span>
+                              </div>
+                            </div>
+                            <div class="telemetry-card">
+                              <div class="card-icon"><i data-lucide="database" class="text-secondary"></i></div>
+                              <div class="card-data">
+                                <span class="val">38 ms</span>
+                                <span class="lbl mono-code">PostgreSQL P95</span>
+                              </div>
+                            </div>
+                            <div class="telemetry-card">
+                              <div class="card-icon"><i data-lucide="server" class="text-emerald"></i></div>
+                              <div class="card-data">
+                                <span class="val">0 Errors</span>
+                                <span class="lbl mono-code">ASP.NET 8</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="animated-pulse-line">
+                            <div class="pulse-beacon"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Vista 1: Código ASP.NET Core y Entity Framework -->
+                    <div class="slide-pane" id="p2Slide1" style="display: none;">
+                      <div class="mockup-screen">
+                        <div class="mockup-bar">
+                          <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
+                          <span class="mock-url mono-code">MetricsController.cs</span>
+                        </div>
+                        <div class="mockup-content mono-code p2-code-view">
+                          <div class="c-comment">// ASP.NET Core Minimal API / Streaming</div>
+                          <div><span class="c-keyword">app</span>.MapGet(<span class="c-str">"/api/stream"</span>, <span class="c-keyword">async</span> (AppDbContext db) =></div>
+                          <div>{</div>
+                          <div style="padding-left: 1.5rem;">var metrics = <span class="c-keyword">await</span> db.Metrics.AsNoTracking().ToListAsync();</div>
+                          <div style="padding-left: 1.5rem;"><span class="c-keyword">return</span> Results.Ok(metrics);</div>
+                          <div>});</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="carousel-bottom-bar single-meta">
+                    <span class="mono-code text-muted">Licencia: MIT · Compatible con Linux y Docker</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="project-info-col">
+                <div class="project-meta-badges">
+                  <span class="badge badge-public">
+                    <i data-lucide="globe" class="icon-xs"></i>
+                    <span>🌐 Proyecto Público</span>
+                  </span>
+                  <span class="badge badge-open">Open Source</span>
+                </div>
+
+                <h3 class="project-title">DevCloud Metrics - Telemetría & Observabilidad Cloud-Native</h3>
+
+                <ul class="project-details-list">
+                  <li>
+                    <strong class="detail-label"><i data-lucide="alert-circle" class="icon-xs text-amber"></i> Problema:</strong>
+                    <span class="detail-text">Carencia de herramientas accesibles y de bajo consumo para monitorear microservicios heterogéneos sin incurrir en altos costos de proveedores propietarios.</span>
+                  </li>
+                  <li>
+                    <strong class="detail-label"><i data-lucide="check-circle-2" class="icon-xs text-emerald"></i> Solución:</strong>
+                    <span class="detail-text">Diseño de una suite con backend en ASP.NET Core y almacenamiento optimizado en PostgreSQL, consumiendo agentes ligeros que emiten métricas en vivo mediante WebSockets.</span>
+                  </li>
+                  <li>
+                    <strong class="detail-label"><i data-lucide="user-check" class="icon-xs text-accent"></i> Mi Rol:</strong>
+                    <span class="detail-text">Desarrollo integral de los controladores REST en C#, configuración de Entity Framework Core con PostgreSQL, autenticación JWT y frontend dinámico con JavaScript vanilla.</span>
+                  </li>
+                </ul>
+
+                <div class="tech-tags">
+                  <span class="tech-tag">ASP.NET Core</span>
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">HTML5 / CSS3</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Linux</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://ejemplo-demo-en-vivo.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i data-lucide="external-link" class="icon-md"></i>
+                    <span>Demo en Vivo</span>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                    <i data-lucide="github" class="icon-md"></i>
+                    <span>Código en GitHub</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. HERRAMIENTAS Y TECNOLOGÍAS
+         ====================================================================== -->
+    <section class="section-padding tech-section" id="tecnologias">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-head">
+          <div class="section-tag mono-code">
+            <span class="tag-hash">//</span> STACK TÉCNICO
+          </div>
+          <h2 class="section-title">Herramientas y Tecnologías</h2>
+          <p class="section-description">
+            Conjunto de herramientas dominadas para construir desde arquitecturas de datos y microservicios hasta interfaces de usuario fluidas.
+          </p>
+        </div>
+
+        <!-- Tech Matrix Layout -->
+        <div class="tech-categories-grid">
+          
+          <!-- Category 1: Lenguajes -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="category-icon-wrap cat-languages">
+                <i data-lucide="binary"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Lenguajes</h3>
+                <span class="category-subtitle mono-code">Core Syntax & Logic</span>
+              </div>
+            </div>
+            <div class="skills-pill-group">
+              <div class="skill-pill">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-level mono-code">ES6+ / Async</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">Python</span>
+                <span class="skill-level mono-code">OOP / Fast APIs</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">SQL</span>
+                <span class="skill-level mono-code">DML / DDL / Indexing</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">C#</span>
+                <span class="skill-level mono-code">.NET 8 / LINQ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="category-icon-wrap cat-backend">
+                <i data-lucide="server"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Backend</h3>
+                <span class="category-subtitle mono-code">APIs & Microservicios</span>
+              </div>
+            </div>
+            <div class="skills-pill-group">
+              <div class="skill-pill highlight-pill">
+                <span class="skill-name">FastAPI</span>
+                <span class="skill-level mono-code">Pydantic / Asíncrono</span>
+              </div>
+              <div class="skill-pill highlight-pill">
+                <span class="skill-name">ASP.NET Core</span>
+                <span class="skill-level mono-code">Web APIs / EF Core</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">RESTful Services</span>
+                <span class="skill-level mono-code">Arquitectura Limpia</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">JWT & Auth</span>
+                <span class="skill-level mono-code">Seguridad & RBAC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Frontend -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="category-icon-wrap cat-frontend">
+                <i data-lucide="layout"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Frontend</h3>
+                <span class="category-subtitle mono-code">Diseño & Experiencia</span>
+              </div>
+            </div>
+            <div class="skills-pill-group">
+              <div class="skill-pill">
+                <span class="skill-name">HTML5</span>
+                <span class="skill-level mono-code">Semántica & SEO</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">CSS3</span>
+                <span class="skill-level mono-code">Flex / Grid / Animations</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">Tailwind / Vanilla UI</span>
+                <span class="skill-level mono-code">Responsive Total</span>
+              </div>
+              <div class="skill-pill">
+                <span class="skill-name">DOM Interactivity</span>
+                <span class="skill-level mono-code">Fetch / Event Loop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Bases de Datos y Herramientas -->
+          <div class="tech-card full-span-card">
+            <div class="tech-card-header">
+              <div class="category-icon-wrap cat-infra">
+                <i data-lucide="database"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Bases de Datos & Herramientas</h3>
+                <span class="category-subtitle mono-code">Persistencia, DevOps & Cloud</span>
+              </div>
+            </div>
+            <div class="skills-pill-group multi-grid">
+              <div class="skill-pill">
+                <i data-lucide="hard-drive" class="pill-icon text-accent"></i>
+                <div>
+                  <span class="skill-name">SQL Server</span>
+                  <span class="skill-level mono-code">T-SQL & Stored Procedures</span>
+                </div>
+              </div>
+              <div class="skill-pill">
+                <i data-lucide="database" class="pill-icon text-secondary"></i>
+                <div>
+                  <span class="skill-name">PostgreSQL</span>
+                  <span class="skill-level mono-code">Relacional & Optimización</span>
+                </div>
+              </div>
+              <div class="skill-pill">
+                <i data-lucide="layers" class="pill-icon text-emerald"></i>
+                <div>
+                  <span class="skill-name">MongoDB</span>
+                  <span class="skill-level mono-code">NoSQL Documental</span>
+                </div>
+              </div>
+              <div class="skill-pill">
+                <i data-lucide="git-branch" class="pill-icon text-amber"></i>
+                <div>
+                  <span class="skill-name">Git</span>
+                  <span class="skill-level mono-code">Control de versiones</span>
+                </div>
+              </div>
+              <div class="skill-pill">
+                <i data-lucide="box" class="pill-icon text-accent"></i>
+                <div>
+                  <span class="skill-name">Docker</span>
+                  <span class="skill-level mono-code">Contenedores & Compose</span>
+                </div>
+              </div>
+              <div class="skill-pill">
+                <i data-lucide="terminal" class="pill-icon text-secondary"></i>
+                <div>
+                  <span class="skill-name">Linux</span>
+                  <span class="skill-level mono-code">Bash & Servidores</span>
+                </div>
+              </div>
+              <div class="skill-pill">
+                <i data-lucide="cloud" class="pill-icon text-accent"></i>
+                <div>
+                  <span class="skill-name">Microsoft Azure</span>
+                  <span class="skill-level mono-code">App Services & VMs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. FORMACIÓN, EXPERIENCIA Y COMPETENCIAS
+         ====================================================================== -->
+    <section class="section-padding trajectory-section" id="experiencia">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-head">
+          <div class="section-tag mono-code">
+            <span class="tag-hash">//</span> TRAYECTORIA & LOGROS
+          </div>
+          <h2 class="section-title">Formación, Experiencia y Competencias</h2>
+          <p class="section-description">
+            Evidencia tangible de retos técnicos superados, hackathons de programación bajo presión y experiencia continua.
+          </p>
+        </div>
+
+        <div class="trajectory-split">
+          
+          <!-- Column 1: Competencias y Hackathons -->
+          <div class="trajectory-col">
+            <div class="col-header">
+              <div class="col-icon-badge text-amber">
+                <i data-lucide="trophy"></i>
+              </div>
+              <div>
+                <h3 class="col-title">Competencias y Hackathons</h3>
+                <span class="col-sub mono-code">Resolución técnica bajo presión</span>
+              </div>
+            </div>
+
+            <div class="timeline-stream">
+              <!-- Item 1 -->
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <h4 class="card-item-title">[Hackathon Nacional de Innovación Cloud]</h4>
+                  <span class="year-badge mono-code">2024</span>
+                </div>
+                <p class="card-achievement">
+                  <strong class="text-white">Logro:</strong> 1er Lugar construyendo un microservicio de alertas en tiempo real con FastAPI y Azure Functions para 10,000 usuarios concurrentes en 36 horas continuas.
+                </p>
+                <div class="card-action">
+                  <button class="btn-cert" onclick="openCertModal('Hackathon Nacional de Innovación Cloud', '2024', '1er Lugar - Solución de Alertas Cloud con FastAPI & Azure', 'Comité Nacional de Tecnología')">
+                    <i data-lucide="file-badge" class="icon-xs text-amber"></i>
+                    <span>📄 Ver Certificado</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <h4 class="card-item-title">[Reto Iberoamericano de Algoritmos & DB]</h4>
+                  <span class="year-badge mono-code">2023</span>
+                </div>
+                <p class="card-achievement">
+                  <strong class="text-white">Logro:</strong> Finalista Top 5 resolviendo optimización de consultas complejas en SQL Server y procesamiento asíncrono con C# (.NET).
+                </p>
+                <div class="card-action">
+                  <button class="btn-cert" onclick="openCertModal('Reto Iberoamericano de Algoritmos & DB', '2023', 'Finalista Top 5 - Optimización de Consultas SQL Server & Backend C#', 'Federación de Ciencias de la Computación')">
+                    <i data-lucide="file-badge" class="icon-xs text-amber"></i>
+                    <span>📄 Ver Certificado</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Experiencia y Estudios -->
+          <div class="trajectory-col">
+            <div class="col-header">
+              <div class="col-icon-badge text-accent">
+                <i data-lucide="briefcase"></i>
+              </div>
+              <div>
+                <h3 class="col-title">Experiencia y Estudios</h3>
+                <span class="col-sub mono-code">Práctica profesional & formación académica</span>
+              </div>
+            </div>
+
+            <div class="timeline-stream">
+              <!-- Experiencia 1 -->
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <h4 class="card-item-title">[Desarrollador Full Stack / Backend Freelance]</h4>
+                  <span class="year-badge mono-code text-accent">2023 - Actualidad</span>
+                </div>
+                <div class="card-institution mono-code">[Proyectos Independientes & Clientes Comerciales]</div>
+                <p class="card-achievement">
+                  Diseño de APIs RESTful en FastAPI y ASP.NET Core, modelado de bases de datos relacionales (PostgreSQL/SQL Server) y despliegue automatizado con Docker sobre entornos Linux.
+                </p>
+              </div>
+
+              <!-- Estudios -->
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <h4 class="card-item-title">[Ingeniería / Carrera en Desarrollo de Software]</h4>
+                  <span class="year-badge mono-code">2020 - 2024</span>
+                </div>
+                <div class="card-institution mono-code">[Nombre de tu Institución Universitaria o Tecnológica]</div>
+                <p class="card-achievement">
+                  Formación integral con énfasis en estructuras de datos avanzadas, ingeniería de requerimientos, sistemas distribuidos, seguridad informática y metodologías ágiles.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SOBRE MÍ (Personalizable: Credencial Técnica vs. Foto de Perfil)
+         ====================================================================== -->
+    <section class="section-padding about-section" id="sobre-mi">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-grid">
+            
+            <!-- Visual Personalizable: Selector de Modo (Avatar Técnico vs Foto) -->
+            <div class="about-visual-column">
+              
+              <!-- Selector Rápido de Visual -->
+              <div class="visual-mode-selector">
+                <button class="mode-tab active" onclick="switchAboutMode('tech')" id="btnAboutTech">
+                  <i data-lucide="terminal" class="icon-xs"></i>
+                  <span>Avatar Técnico</span>
+                </button>
+                <button class="mode-tab" onclick="switchAboutMode('photo')" id="btnAboutPhoto">
+                  <i data-lucide="user" class="icon-xs"></i>
+                  <span>Foto Perfil</span>
+                </button>
+              </div>
+
+              <!-- Opción 1: Avatar Técnico / Credencial de Arquitectura (Recomendado) -->
+              <div class="about-badge-card" id="aboutTechBadge">
+                <div class="badge-terminal-screen">
+                  <div class="badge-top-row">
+                    <span class="mono-code text-accent">&lt;ENGINEER_ID&gt;</span>
+                    <span class="badge-ping mono-code text-emerald">● 4ms</span>
+                  </div>
+                  <div class="badge-avatar-center">
+                    <div class="code-monogram-circle">
+                      <span class="mono-code">&lt;DEV /&gt;</span>
+                    </div>
+                  </div>
+                  <div class="badge-body-meta">
+                    <div class="meta-line">
+                      <span class="lbl mono-code">ESPECIALIDAD:</span>
+                      <span class="val">Backend & Cloud</span>
+                    </div>
+                    <div class="meta-line">
+                      <span class="lbl mono-code">CORE STACK:</span>
+                      <span class="val text-accent">Python · C# · SQL</span>
+                    </div>
+                    <div class="meta-line">
+                      <span class="lbl mono-code">METODOLOGÍA:</span>
+                      <span class="val text-emerald">Clean Code & TDD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Opción 2: Foto Personal (Opcional, lista para usar si se desea) -->
+              <div class="about-photo-card" id="aboutPhotoBadge" style="display: none;">
+                <div class="photo-frame-inner">
+                  <div class="photo-placeholder-box">
+                    <i data-lucide="camera" class="icon-photo-cam"></i>
+                    <span class="photo-instructions mono-code">Coloca tu archivo en:<br><code>assets/perfil.jpg</code></span>
+                  </div>
+                  <span class="photo-caption mono-code text-accent">[Tu Foto Profesional Aquí]</span>
+                </div>
+              </div>
+
+              <!-- Tip Informativo para el Usuario -->
+              <div class="about-customization-tip">
+                <i data-lucide="info" class="icon-xs text-accent"></i>
+                <span class="tip-text"><strong>Tip de Carrera:</strong> En desarrollo Backend y Full Stack, la arquitectura y el código pesan más que una foto personal. ¡Tú eliges cuál activar con un click!</span>
+              </div>
+
+            </div>
+
+            <!-- Contenido Escrito: Sobre Mí -->
+            <div class="about-text-content">
+              <div class="section-tag mono-code">
+                <span class="tag-hash">//</span> PERFIL PROFESIONAL
+              </div>
+              <h2 class="about-title">Sobre Mí</h2>
+              
+              <!-- Párrafo de 3 a 4 líneas máximo -->
+              <p class="about-paragraph">
+                Me apasiona desentrañar problemas lógicos complejos y transformarlos en arquitecturas de software sólidas, seguras y de alto rendimiento. Abordo los desafíos técnicos priorizando código limpio, análisis riguroso de cuellos de botella y bases de datos debidamente indexadas. Actualmente busco oportunidades profesionales donde pueda aportar valor inmediato en equipos de ingeniería backend o full stack con visión de escala.
+              </p>
+
+              <!-- Values / Philosophy Pills -->
+              <div class="about-stats-row">
+                <div class="stat-box">
+                  <span class="stat-num text-accent">+15</span>
+                  <span class="stat-lbl mono-code">Endpoints & Servicios Creados</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num text-emerald">100%</span>
+                  <span class="stat-lbl mono-code">Compromiso con Buenas Prácticas</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num text-secondary">0ms</span>
+                  <span class="stat-lbl mono-code">Tolerancia a Deuda Técnica</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CONTACTO Y REDES SOCIALES
+         ====================================================================== -->
+    <section class="section-padding contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-grid">
+            
+            <div class="contact-info-col">
+              <div class="section-tag mono-code">
+                <span class="tag-hash">//</span> INICIEMOS CONVERSACIÓN
+              </div>
+              <h2 class="contact-headline">
+                "¿Tienes un proyecto en mente o una oportunidad laboral? <span class="text-gradient">Hablemos.</span>"
+              </h2>
+              <p class="contact-subtext">
+                Estoy disponible para incorporarme a proyectos desafiantes como desarrollador Backend o Full Stack, ya sea en modalidad remota o presencial.
+              </p>
+
+              <!-- Correo con botón copiar -->
+              <div class="email-box">
+                <div class="email-label mono-code">CORREO DIRECTO:</div>
+                <div class="email-action-row">
+                  <a href="mailto:tu.correo@ejemplo.com" class="email-address mono-code" id="emailAddress">
+                    tu.correo@ejemplo.com
+                  </a>
+                  <button class="btn btn-copy" id="btnCopyEmail" onclick="copyEmailToClipboard()" aria-label="Copiar correo electrónico">
+                    <i data-lucide="copy" class="icon-sm" id="copyIcon"></i>
+                    <span id="copyBtnText">Copiar correo</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Enlaces a redes -->
+              <div class="socials-list-wrapper">
+                <span class="social-list-title mono-code">REDES & ENLACES PROFESIONALES:</span>
+                <div class="socials-links-grid">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-card-link">
+                    <i data-lucide="linkedin" class="icon-md text-accent"></i>
+                    <div class="link-meta">
+                      <span class="link-name">LinkedIn</span>
+                      <span class="link-url mono-code">/in/tu-perfil</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="icon-xs link-arrow"></i>
+                  </a>
+
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-card-link">
+                    <i data-lucide="github" class="icon-md text-slate"></i>
+                    <div class="link-meta">
+                      <span class="link-name">GitHub</span>
+                      <span class="link-url mono-code">/tu-usuario</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="icon-xs link-arrow"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Message Form -->
+            <div class="contact-form-col">
+              <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                <h3 class="form-title">Enviar Mensaje Rápido</h3>
+                
+                <div class="form-group">
+                  <label for="formName" class="form-label mono-code">NOMBRE O EMPRESA</label>
+                  <input type="text" id="formName" class="form-input" placeholder="Ej. Ana Gómez / Tech Corp" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="formEmail" class="form-label mono-code">TU CORREO ELECTRÓNICO</label>
+                  <input type="email" id="formEmail" class="form-input" placeholder="nombre@empresa.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="formMessage" class="form-label mono-code">MENSAJE O PROPUESTA</label>
+                  <textarea id="formMessage" rows="4" class="form-input" placeholder="Cuéntame sobre el puesto o proyecto..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="btnSubmitForm">
+                  <i data-lucide="send" class="icon-sm"></i>
+                  <span>Enviar Mensaje</span>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo mono-code">[Tu Nombre Completo]</span>
+        <span class="footer-copy">© <span id="currentYear"></span> · Arquitectura de software moderna, alta disponibilidad y código limpio.</span>
+      </div>
+      <div class="footer-right">
+        <a href="#inicio" class="back-to-top" aria-label="Volver arriba">
+          <i data-lucide="arrow-up" class="icon-sm"></i>
+          <span>Volver Arriba</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODALS SYSTEM
+       ====================================================================== -->
+
+  <!-- Modal 1: Demo en Video Interactiva (Proyecto 1) -->
+  <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" hidden>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i data-lucide="play-circle" class="icon-sm text-accent"></i>
+          <h3 class="modal-title" id="videoModalTitle">Demo en Video: FinPulse Core</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('videoModal')" aria-label="Cerrar ventana">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="video-player-simulation">
+          <div class="video-screen-mock">
+            <div class="video-play-watermark" id="videoPlayWatermark" onclick="toggleSimulatedPlay()">
+              <i data-lucide="play" class="icon-play-huge" id="videoPlayIcon"></i>
+            </div>
+            <div class="video-overlay-info">
+              <span class="video-tag mono-code">RECORRIDO ARQUITECTURAL (30s)</span>
+              <p class="video-desc" id="videoStepDesc">Paso 1: Recepción de 4,000 TPS concurrentes en FastAPI con validación Pydantic asíncrona.</p>
+            </div>
+          </div>
+          <div class="video-timeline-bar" onclick="seekSimulatedVideo(event)">
+            <div class="timeline-played" id="videoTimelinePlayed"></div>
+          </div>
+          <div class="video-controls-row">
+            <div class="video-left-ctrl">
+              <button class="btn-ctrl-play" onclick="toggleSimulatedPlay()" id="btnPlayPauseSim">
+                <i data-lucide="play" class="icon-xs" id="ctrlPlayIcon"></i>
+              </button>
+              <span class="mono-code text-accent" id="videoTimeDisplay">00:10 / 00:30</span>
+            </div>
+            <span class="mono-code text-slate">1080p 60fps · Entorno Seguro</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-glass" onclick="closeModal('videoModal')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Certificados (Hackathons & Formación) -->
+  <div class="modal-backdrop" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" hidden>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i data-lucide="award" class="icon-sm text-amber"></i>
+          <h3 class="modal-title" id="certModalTitle">Certificado de Competencia</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('certModal')" aria-label="Cerrar certificado">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="certificate-canvas">
+          <div class="cert-border">
+            <div class="cert-header-icon">
+              <i data-lucide="shield-check" class="icon-cert-seal text-amber"></i>
+            </div>
+            <span class="cert-pre mono-code">CERTIFICADO OFICIAL DE RECONOCIMIENTO</span>
+            <h4 class="cert-recipient">[Tu Nombre Completo]</h4>
+            <p class="cert-reason" id="certReason">Por su destacada participación y logro en el certamen técnico.</p>
+            
+            <div class="cert-footer-row">
+              <div class="cert-sig">
+                <div class="sig-line"></div>
+                <span class="sig-text mono-code" id="certOrg">Entidad Emisora</span>
+              </div>
+              <div class="cert-badge-box">
+                <span class="mono-code text-amber" id="certYearBadge">2024</span>
+                <span class="mono-code cert-id">ID: CERT-8942-VERIFIED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary-outline" onclick="printCertificate()">
+          <i data-lucide="printer" class="icon-xs"></i>
+          <span>Imprimir / Guardar</span>
+        </button>
+        <button class="btn btn-glass" onclick="closeModal('certModal')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Descargar CV Preview -->
+  <div class="modal-backdrop" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" hidden>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i data-lucide="file-text" class="icon-sm text-accent"></i>
+          <h3 class="modal-title" id="cvModalTitle">Curriculum Vitae (PDF)</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('cvModal')" aria-label="Cerrar modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="cv-preview-box">
+          <div class="cv-mock-page">
+            <div class="cv-header-line">
+              <h4 class="cv-name">[Tu Nombre Completo]</h4>
+              <span class="cv-tagline mono-code">Desarrollador Full Stack / Backend</span>
+            </div>
+            <p class="cv-summary">
+              Especialista en desarrollo backend con FastAPI, ASP.NET Core, bases de datos SQL Server y PostgreSQL, arquitectura en contenedores Docker y computación en Microsoft Azure.
+            </p>
+            <div class="cv-skills-summary mono-code">
+              • Lenguajes: Python, C#, JavaScript, SQL<br>
+              • Backend: FastAPI, ASP.NET Core, APIs RESTful<br>
+              • DB & Cloud: SQL Server, PostgreSQL, Docker, Azure, Linux
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="simulateCvDownload()">
+          <i data-lucide="download" class="icon-xs"></i>
+          <span>Confirmar Descarga (.PDF)</span>
+        </button>
+        <button class="btn btn-glass" onclick="closeModal('cvModal')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Scripts (Clean, Instant, Zero-Latency) -->
+  <script src="script.js"></script>
+</body>
+</html>
